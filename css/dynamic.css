@@ -1,0 +1,200 @@
+@media (min-width:960px) {
+    html,
+    body {
+        font-size: 16px;
+        max-width: 960px;
+        margin: auto;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul li {
+    list-style: none;
+}
+
+.interspace {
+    width: 100%;
+    height: 0.2666rem;
+    background-color: #f7f7f7;
+}
+
+.container {
+    padding: 0.4rem;
+}
+
+.load {
+    height: 1.92rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 1.1467rem;
+    margin-top: 0.4rem;
+}
+
+.display {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 1.28rem;
+    height: 1.28rem;
+    margin-right: 0.2666rem;
+}
+
+.default {
+    color: #333333;
+    font-size: 0.3733rem;
+}
+
+.gary {
+    color: #999999;
+    font-size: 0.32rem;
+    margin-top: 0.1rem;
+}
+
+.download {
+    width: 2.4rem;
+    height: 0.9066rem;
+    background-color: #ffffff;
+    border-radius: 0.4533rem;
+    border: solid 0.0266rem #ff7c00;
+    font-size: 0.4rem;
+    text-align: center;
+    line-height: 0.9066rem;
+    color: #ff7c00;
+}
+
+.radius {
+    width: 1.1467rem;
+    height: 1.1467rem;
+    border-radius: 50%;
+    margin-right: 0.4rem;
+    background-color: red;
+}
+
+.attention {
+    width: 1.5733rem;
+    height: 0.7067rem;
+    background-color: #ff7c00;
+    border-radius: 0.3467rem;
+    line-height: 0.7067rem;
+    color: white;
+    text-align: center;
+    font-size: 0.3467rem;
+}
+
+.square {
+    display: block;
+    width: 10rem;
+    height: 6.6667rem;
+    background-color: antiquewhite;
+}
+
+.sw-bullet li.active {
+    background-color: #ff7c00;
+}
+
+.sw-bullet li {
+    width: 0.2133rem;
+    height: 0.16rem;
+    transform: skew(-30deg);
+    /*设置倾斜度为-30*/
+    -webkit-transform: skew(-30deg);
+    -moz-transform: skew(-30deg);
+    -o-transform: skew(-30deg);
+    -ms-transform: skew(-30deg);
+    margin-right: 0.6667rem;
+    background-color: rgba(141, 153, 174, 0.5);
+    border-radius: 0;
+}
+
+.swipslider .sw-slide {
+    background-color: white;
+}
+
+.discover {
+    width: 0.2267rem;
+    height: 0.2667rem;
+}
+
+.zan {
+    font-size: 0.3467rem;
+    color: #666666;
+}
+
+.zan_ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0.5333rem;
+}
+
+.portrait {
+    display: inline-block;
+    width: 0.9333rem;
+    height: 0.9333rem;
+    border-radius: 50%;
+    background-color: darkcyan;
+    margin: 0.1333rem 0.2rem 0 0;
+}
+
+.more {
+    opacity: 0.3;
+}
+
+.comment_content {
+    display: flex;
+    border-bottom: 1px solid #cccccc;
+    padding: 0.2667rem 0;
+}
+
+.comment_user {
+    margin-top: 0.2rem;
+    font-size: 0.3467rem;
+    color: #999999;
+}
+
+.time {
+    font-size: 0.2667rem;
+    color: #999999;
+    margin-bottom: 0.2667rem;
+}
+
+.comment_default {
+    height: 2.6667rem;
+    line-height: 2.6667rem;
+    text-align: center;
+    font-size: 0.4rem;
+    color: #999999;
+}
+
+
+/* =============================== information.css ==================================== */
+
+.big {
+    margin-top: 0.2667rem;
+    font-size: 0.5333rem;
+    color: #333333;
+}
+
+.detext {
+    line-height: 0.59rem;
+}
+
+.fruits {
+    display: inline-block;
+    width: 9.2rem;
+    height: 5.3333rem;
+    background-color: sandybrown;
+}

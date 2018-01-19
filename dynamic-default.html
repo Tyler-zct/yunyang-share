@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./assets/flexible.min.js"></script>
+    <link rel="stylesheet" href="./assets/swipeslider.css">
+    <link rel="stylesheet" href="./css/dynamic.css">
+    <title>动态详情缺省</title>
+</head>
+
+<body>
+    <div class="container" style="margin:0;">
+        <div class="between">
+            <div class="display">
+                <img src="./img/me_about_logo.svg" alt="" class="logo">
+                <div>
+                    <div class="default">云扬健身</div>
+                    <div class="gary">共享健身房</div>
+                </div>
+            </div>
+            <div class="download">立即下载</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="between user">
+            <div class="display">
+                <img src="" alt="" class="radius">
+                <div>
+                    <div class="default">Max</div>
+                    <div class="gary">3小时前</div>
+                </div>
+            </div>
+            <div class="attention">关注</div>
+        </div>
+    </div>
+
+    <figure id="full_feature" class="swipslider">
+        <ul class="sw-slides">
+            <li class="sw-slide">
+                <img src="" alt="" class="square">
+            </li>
+            <li class="sw-slide">
+                <img src="" alt="" class="square" style="background-color: bisque;">
+            </li>
+            <li class="sw-slide">
+                <img src="" alt="" class="square" style="background-color: cyan;">
+            </li>
+            <li class="sw-slide">
+                <img src="" alt="" class="square">
+            </li>
+            <li class="sw-slide">
+                <img src="" alt="" class="square" style="background-color: bisque;">
+            </li>
+            <li class="sw-slide">
+                <img src="" alt="" class="square" style="background-color: cyan;">
+            </li>
+        </ul>
+    </figure>
+    <div class="container" style="margin-top:0;">
+        <div class="default">同志们，健身不能停啊!同志们，健身不能停啊~~~同志们，健身不能停啊~~~</div>
+        <div class="default">同志们，健身不能停啊!同志们，健身不能停啊~~~ 同志们，健身不能停啊!同志们，健身不能停啊~~~同志们，健身不能停啊!同志们，健身不能停啊!同志...们，健身不能停啊!
+        </div>
+        <div class="gary" style="padding:0.48rem 0;">
+            <img src="./img/discover_publish_local01.svg" alt="" class="discover">
+            <span>同安第二外国语学校云扬健身门店</span>
+        </div>
+    </div>
+    <div class="container" style="padding:0.4rem;">
+        <div class="zan">1次赞</div>
+        <ul class="zan_ul">
+            <li>
+                <img src="" alt="" class="portrait">
+            </li>
+            <li>
+                <img src="./img/course_titlebar_more.svg" alt="" class="more portrait">
+            </li>
+        </ul>
+    </div>
+    <div class="container" style="padding-top:0.4rem;">
+        <div class="zan">评论</div>
+        <div class="comment_default">还没有人评论过，快来抢沙发</div>
+    </div>
+
+    <script src="./assets/jquery-2.1.1.min.js"></script>
+    <script src="./assets/swipeslider.js"></script>
+    <script>
+        $(window).load(function () {
+            $('#full_feature').swipeslider();
+        });
+    </script>
+</body>
+
+</html>
