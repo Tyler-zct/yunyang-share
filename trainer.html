@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <!-- 云扬下载 -->
     <div class="container" style="padding:0 0.4rem;">
         <div class="between">
             <div class="display">
@@ -27,35 +28,22 @@
 
     <div class="interspace"></div>
 
-    <figure id="full_feature" class="swipslider">
-        <ul class="sw-slides">
-            <li class="sw-slide">
-                <img src="" alt="" class="square">
-            </li>
-            <li class="sw-slide">
-                <img src="" alt="" class="square" style="background-color: bisque;">
-            </li>
-            <li class="sw-slide">
-                <img src="" alt="" class="square" style="background-color: cyan;">
-            </li>
-            <li class="sw-slide">
-                <img src="" alt="" class="square">
-            </li>
-            <li class="sw-slide">
-                <img src="" alt="" class="square" style="background-color: bisque;">
-            </li>
-            <li class="sw-slide">
-                <img src="" alt="" class="square" style="background-color: cyan;">
-            </li>
-        </ul>
+    <!-- 私教图片 -->
+    <figure id="full_feature" class="swipslider" style="padding-top:68%;">
+        <ul class="sw-slides" id="pictures"></ul>
     </figure>
+
+    <!-- 私教信息 -->
     <div class="container" style="padding-top:0.1333rem;">
         <div class="flex">
-            <div><span class="user">黄宇平</span><span class="gender">男</span></div>
             <div>
-                <span class="number">195</span>
+                <span class="user" id="name"></span>
+                <span class="gender"></span>
+            </div>
+            <div>
+                <span class="number" id="stature"></span>
                 <span class="unit">cm</span>
-                <span class="number">65</span>
+                <span class="number" id="weight"></span>
                 <span class="unit">kg</span>
             </div>
         </div>
@@ -63,11 +51,7 @@
             <span id="function-star" class="target-star"></span>
             <span id="function-hint" class="hint"></span>分
         </div>
-        <div class="label">
-            <span>#减脂</span>
-            <span>#塑形</span>
-            <span>#新陈代谢</span>
-        </div>
+        <div class="label"></div>
     </div>
 
     <div class="interspace"></div>
@@ -77,8 +61,8 @@
             <img src="./img/course_title.png" alt="" class="course">
             <span>所在门店</span>
         </div>
-        <div class="text" style="margin-bottom: 0.4rem;">同安第二外国语中学云扬健身门店</div>
-        <div class="zan">详细地址：厦门市同安区祥平街道银湖西路376号</div>
+        <div class="text" id="gym"></div>
+        <div class="zan">详细地址：<span id="address"></span></div>
         <div class="look">
             <span class="borders">查看门店</span>
             <span class="borders">全部课程</span>
@@ -92,9 +76,7 @@
             <img src="./img/course_title.png" alt="" class="course">
             <span>简介</span>
         </div>
-        <div class="zan" style="line-height:0.6rem;">毕业于梦想青成国际健身学院</div>
-        <div class="zan" style="line-height:0.6rem;">专业体适能训练认证</div>
-        <div class="zan" style="line-height:0.6rem;">健身教练国家职业资格证书</div>
+        <div class="zan" id="brief"></div>
 
     </div>
 
@@ -103,154 +85,109 @@
     <div class="container" style="padding-bottom:0.2667rem;">
         <div class="title">
             <img src="./img/course_title.png" alt="" class="course">
-            <span>点评(11)</span>
+            <span>点评(<span id="comment_num"></span>)</span>
             <img src="./img/me_to_homepage.svg" alt="" class="more">
         </div>
-        <div class="comment_content">
-            <div>
-                <img src="" alt="" class="remark_portrait">
-            </div>
-            <div style="width:90%;">
-                <div class="comment_user">Dun</div>
-                <div class="time">5分钟前</div>
-                <div class="">
-                    <span id="user1" class="target-star"></span>
-                </div>
-                <div class="default">很专业，并且一直都在学习升级。非常负责，根据不同的身体状况，置顶不同的锻炼计划，很有效果。很有计划，跟进学员的运动情况，提醒上课，自主训练。</div>
-            </div>
-        </div>
-
-        <div class="comment_content">
-            <div>
-                <img src="" alt="" class="remark_portrait">
-            </div>
-            <div style="width:90%;">
-                <div class="comment_user">花轮同学</div>
-                <div class="time">3天前</div>
-                <div class="">
-                    <span id="user2" class="target-star"></span>
-                </div>
-                <div class="default">很专业!</div>
-            </div>
-        </div>
-
-        <div class="comment_content">
-            <div>
-                <img src="" alt="" class="remark_portrait">
-            </div>
-            <div style="width:90%;">
-                <div class="comment_user">Tommy</div>
-                <div class="time">5天前</div>
-                <div class="">
-                    <span id="user3" class="target-star"></span>
-                </div>
-                <div class="default">感觉有点水啊</div>
-            </div>
-        </div>
-
-        <div class="comment_content">
-            <div>
-                <img src="" alt="" class="remark_portrait">
-            </div>
-            <div style="width:90%;">
-                <div class="comment_user">凯文</div>
-                <div class="time">2017-09-11</div>
-                <div class="">
-                    <span id="user4" class="target-star"></span>
-                </div>
-                <div class="default">上过他的课，总体感觉教练非常有耐心，对于我这种健身小白来说感觉是非常平易近人。从动作要领到安全指引，非常细致。</div>
-            </div>
-        </div>
-
-        <div class="comment_content" style="border:none;">
-            <div>
-                <img src="" alt="" class="remark_portrait">
-            </div>
-            <div style="width:90%;">
-                <div class="comment_user">Jenny</div>
-                <div class="time">2017-08-30</div>
-                <div class="">
-                    <span id="user5" class="target-star"></span>
-                </div>
-                <div class="default">态度挺好，但技术不太行啊</div>
-            </div>
-        </div>
-
+        <div id="comments"></div>
     </div>
 
     <div class="foot">立即预约</div>
 
-        <a href="./data.html" style="text-align:center;font-size:0.6rem;">返回数据页面</a>
-
-
     <script src="./assets/jquery-2.1.1.min.js"></script>
     <script src="./assets/swipeslider.js"></script>
     <script src="./assets/jquery.raty.min.js"></script>
+    <script src="./js/trainer.js"></script>
     <script>
-        $(function () {
-            $('#full_feature').swipeslider();
-            // $.fn.raty.defaults.path = 'img';
-            $('#function-star').raty({
-                path: 'img',
-                starHalf: 'course_score03_m.png',
-                starOff: 'course_score02_m.png',
-                starOn: 'course_score01_m.png',
-                target: '#function-hint',
-                targetKeep: true,
-                precision: true,
-                score: 4.5,
-                readOnly: true,
-            });
-            $('#user1').raty({
-                path: 'img',
-                starHalf: 'course_score03_m.png',
-                starOff: 'course_score02_m.png',
-                starOn: 'course_score01_m.png',
-                targetKeep: true,
-                precision: true,
-                score: 4,
-                readOnly: true,
-            });
-            $('#user2').raty({
-                path: 'img',
-                starHalf: 'course_score03_m.png',
-                starOff: 'course_score02_m.png',
-                starOn: 'course_score01_m.png',
-                targetKeep: true,
-                precision: true,
-                score: 4,
-                readOnly: true,
-            });
-            $('#user3').raty({
-                path: 'img',
-                starHalf: 'course_score03_m.png',
-                starOff: 'course_score02_m.png',
-                starOn: 'course_score01_m.png',
-                targetKeep: true,
-                precision: true,
-                score: 3,
-                readOnly: true,
-            });
-            $('#user4').raty({
-                path: 'img',
-                starHalf: 'course_score03_m.png',
-                starOff: 'course_score02_m.png',
-                starOn: 'course_score01_m.png',
-                targetKeep: true,
-                precision: true,
-                score: 4,
-                readOnly: true,
-            });
-            $('#user5').raty({
-                path: 'img',
-                starHalf: 'course_score03_m.png',
-                starOff: 'course_score02_m.png',
-                starOn: 'course_score01_m.png',
-                targetKeep: true,
-                precision: true,
-                score: 3,
-                readOnly: true,
-            });
+        $(function() {
+            //  获取key
+            function GetQueryString(name) {
+                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                var r = window.location.search.substr(1).match(reg);
+                // console.log(window.location)
+                if (r != null) return unescape(r[2]);
+                return null;
+            }
+            const key = GetQueryString("key");
+            if (key != null && key.toString().length > 1) {
+                console.log(GetQueryString("key"));
+            }
+
+            $.ajax({
+                url: `https://sharegyms.cn/kong-appint/social/sharing/${key}`,
+                // url: `https://tst.ipukr.cn/kong-appint/social/sharing/346de274-ec9d-4646-bb94-55abffc99da6`,
+                type: 'get',
+                dataType: 'json',
+                success: function(res) {
+                    let date = res.data;
+                    console.log(date)
+                    let insScore = date.score;
+                    $('#function-star').raty({
+                        path: 'img',
+                        starHalf: 'course_score03_m.png',
+                        starOff: 'course_score02_m.png',
+                        starOn: 'course_score01_m.png',
+                        target: '#function-hint',
+                        targetKeep: true,
+                        precision: true,
+                        score: insScore,
+                        readOnly: true,
+                    });
+                    $('#user1').raty({
+                        path: 'img',
+                        starHalf: 'course_score03_m.png',
+                        starOff: 'course_score02_m.png',
+                        starOn: 'course_score01_m.png',
+                        targetKeep: true,
+                        precision: true,
+                        score: 4,
+                        readOnly: true,
+                    });
+                    $('#user2').raty({
+                        path: 'img',
+                        starHalf: 'course_score03_m.png',
+                        starOff: 'course_score02_m.png',
+                        starOn: 'course_score01_m.png',
+                        targetKeep: true,
+                        precision: true,
+                        score: 4,
+                        readOnly: true,
+                    });
+                    $('#user3').raty({
+                        path: 'img',
+                        starHalf: 'course_score03_m.png',
+                        starOff: 'course_score02_m.png',
+                        starOn: 'course_score01_m.png',
+                        targetKeep: true,
+                        precision: true,
+                        score: 3,
+                        readOnly: true,
+                    });
+                    $('#user4').raty({
+                        path: 'img',
+                        starHalf: 'course_score03_m.png',
+                        starOff: 'course_score02_m.png',
+                        starOn: 'course_score01_m.png',
+                        targetKeep: true,
+                        precision: true,
+                        score: 4,
+                        readOnly: true,
+                    });
+                    $('#user5').raty({
+                        path: 'img',
+                        starHalf: 'course_score03_m.png',
+                        starOff: 'course_score02_m.png',
+                        starOn: 'course_score01_m.png',
+                        targetKeep: true,
+                        precision: true,
+                        score: 3,
+                        readOnly: true,
+                    });
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            })
+
         });
     </script>
 </body>

@@ -9,9 +9,21 @@
     <link rel="stylesheet" href="./assets/swipeslider.css">
     <link rel="stylesheet" href="./css/dynamic.css">
     <title>动态详情</title>
+    <style>
+        .feature {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .square {
+            width: 90%;
+            height: auto;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- 云扬下载 -->
     <div class="container" style="padding:0 0.4rem;">
         <div class="load">
             <div class="display">
@@ -27,115 +39,54 @@
 
     <div class="interspace"></div>
 
+    <!-- 发布动态用户信息 -->
     <div class="container" style="padding:0 0.4rem;">
         <div class="between">
             <div class="display">
-                <img src="" alt="" class="radius">
+                <img alt="" class="radius" id="ownerPortrait">
                 <div>
-                    <div class="default">Max</div>
-                    <div class="gary">3小时前</div>
+                    <div class="default" id="ownerNickname"></div>
+                    <div class="gary" id="lastTime"></div>
                 </div>
             </div>
             <div class="attention">关注</div>
         </div>
     </div>
 
-    <figure id="full_feature" class="swipslider">
-        <ul class="sw-slides">
-            <li class="sw-slide">
-                <img src="" alt="" class="square">
-            </li>
-            <li class="sw-slide">
-                <img src="" alt="" class="square" style="background-color: bisque;">
-            </li>
-            <li class="sw-slide">
-                <img src="" alt="" class="square" style="background-color: cyan;">
-            </li>
-            <li class="sw-slide">
-                <img src="" alt="" class="square">
-            </li>
-            <li class="sw-slide">
-                <img src="" alt="" class="square" style="background-color: bisque;">
-            </li>
-            <li class="sw-slide">
-                <img src="" alt="" class="square" style="background-color: cyan;">
-            </li>
-        </ul>
+    <!-- 动态图片 -->
+    <figure id="full_feature" class="swipslider feature">
+        <ul class="sw-slides" id="pictures"></ul>
     </figure>
+
+    <!-- 动态内容与发布地点 -->
     <div class="container" style="margin-top:0;">
-        <div class="default">同志们，健身不能停啊!同志们，健身不能停啊~~~同志们，健身不能停啊~~~</div>
-        <div class="default">同志们，健身不能停啊!同志们，健身不能停啊~~~ 同志们，健身不能停啊!同志们，健身不能停啊~~~同志们，健身不能停啊!同志们，健身不能停啊!同志...们，健身不能停啊!
-        </div>
-        <div class="gary" style="padding:0.48rem 0;">
+        <div class="default" id="content"></div>
+        <div class="gary" style="padding:0.48rem 0;" id="adicon">
             <img src="./img/discover_local_1.svg" alt="" class="discover">
-            <span>同安第二外国语学校云扬健身门店</span>
+            <span id="address"></span>
         </div>
     </div>
+
     <div class="interspace"></div>
 
+    <!-- 获赞情况 -->
     <div class="container" style="padding:0.4rem;">
-        <div class="zan">46次赞</div>
-        <ul class="zan_ul">
-            <li>
-                <img src="" alt="" class="portrait">
-            </li>
-            <li>
-                <img src="" alt="" class="portrait">
-            </li>
-            <li>
-                <img src="" alt="" class="portrait">
-            </li>
-            <li>
-                <img src="" alt="" class="portrait">
-            </li>
-            <li>
-                <img src="" alt="" class="portrait">
-            </li>
-            <li>
-                <img src="./img/course_titlebar_more.svg" alt="" class="more portrait">
-            </li>
-        </ul>
+        <div class="zan">
+            <span id="likeCount"></span>次赞</div>
+        <ul class="zan_ul" id="likes"></ul>
     </div>
     <div class="interspace"></div>
 
-    <div class="container" style="padding:0.4rem 0 0 0.4rem">
-        <div class="zan">38条评论</div>
-        <div class="comment_content">
-            <img src="" alt="" class="portrait">
-            <div>
-                <div class="comment_user">Dun</div>
-                <div class="time">5分钟前</div>
-                <div class="default">赞同赞同！</div>
-            </div>
-        </div>
-        <div class="comment_content">
-            <img src="" alt="" class="portrait">
-            <div>
-                <div class="comment_user">David</div>
-                <div class="time">1小时前</div>
-                <div class="default">I don't agree with the above statement.</div>
-            </div>
-        </div>
-        <div class="comment_content">
-            <img src="" alt="" class="portrait">
-            <div>
-                <div class="comment_user">花轮同学</div>
-                <div class="time">2小时前</div>
-                <div class="default">I don't agree with the above statement.</div>
-            </div>
-        </div>
+    <!-- 评论情况 -->
+    <div class="container" id="comment">
+        <div class="zan">
+            <span id="commentCount"></span>条评论</div>
+        <div id="comments"></div>
     </div>
-
-    <a href="./information.html" style="text-align:center;font-size:0.6rem;">移步至资讯详情页面</a>
-
 
     <script src="./assets/jquery-2.1.1.min.js"></script>
     <script src="./assets/swipeslider.js"></script>
-    <script>
-        $(window).load(function () {
-            $('#full_feature').swipeslider();
-        });
-    </script>
+    <script src="./js/dynamic.js"></script>
 </body>
 
 </html>

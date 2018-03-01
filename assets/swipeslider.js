@@ -28,7 +28,7 @@
       * Overall height of the slider. Set it to percent to make it responsive.
       * Otherwise the slider will keep the height.
       */
-      sliderHeight: '83%'
+      sliderHeight: '68%'
     };
 
     var settings = $.extend(defaultSettings, options);
@@ -39,6 +39,7 @@
     * 1 - sliding started
     * 2 - slide released
     */
+   
     var slidingState = 0;
     var startClientX = 0;
     var startPixelOffset = 0;

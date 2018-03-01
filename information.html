@@ -12,7 +12,8 @@
 </head>
 
 <body>
-    <div class="container" style="margin:0;">
+    <!-- 云扬下载 -->
+    <div class="container" style="padding:0 0.4rem;">
         <div class="between">
             <div class="display">
                 <img src="./img/me_about_logo.svg" alt="" class="logo">
@@ -27,80 +28,34 @@
 
     <div class="interspace"></div>
 
+    <!-- 文章信息 -->
     <div class="container">
-        <div class="big">这些超有内涵的迪士尼动画台词，绝对值得收藏</div>
-        <div class="comment_user" style="margin:0.4rem 0;">云扬健身 / 2017-06-10 / 4032 阅读 </div>
-        <div class="default detext">说到这两年最火的水果，那肯定非牛油果莫属！Ins 上各种 model 疯狂晒餐，健身博主吐血推荐，连明星们也对此爱不释手，这也注定了牛油果不平凡的一生！今天云扬君就要为牛油果疯狂打 Call！</div>
-    </div>
-
-    <div class="container" style="padding: 0 0.4rem;">
-        <img src="" alt="" class="fruits">
-    </div>
-
-    <div class="container">
-        <div class="default detext">作为健身界第一网红，虽然长得丑萌丑萌，但是一点儿都不影响它圈粉，还俘虏了不少迷妹呢。 </div>
-        <div class="default detext">保持好身材 30 年不变的时装精贝嫂，对牛油果也是情有独钟，牛油果直接食用，还可以达到护肤的效果。</div>
+        <div class="big" id="title"></div>
+        <div class="comment_user" style="margin:0.4rem 0;">
+            云扬健身 /
+            <span id="crtTime"></span> /
+            <span id="counter"></span> 阅读
+        </div>
+        <div class="default detext" id="content"></div>
     </div>
 
     <div class="interspace"></div>
 
+    <!-- 获赞情况 -->
     <div class="container" style="padding:0.4rem;">
-        <div class="zan">46次赞</div>
-        <ul class="zan_ul">
-            <li>
-                <img src="" alt="" class="portrait">
-            </li>
-            <li>
-                <img src="" alt="" class="portrait">
-            </li>
-            <li>
-                <img src="" alt="" class="portrait">
-            </li>
-            <li>
-                <img src="" alt="" class="portrait">
-            </li>
-            <li>
-                <img src="" alt="" class="portrait">
-            </li>
-            <li>
-                <img src="./img/course_titlebar_more.svg" alt="" class="more portrait">
-            </li>
-        </ul>
+        <div class="zan"><span id="likeCount"></span>次赞</div>
+        <ul class="zan_ul" id="likes"></ul>
     </div>
+
+    <!-- 评论情况 -->
     <div class="container" style="padding:0.4rem 0 0 0.4rem">
-        <div class="zan">38条评论</div>
-        <div class="comment_content">
-            <img src="" alt="" class="portrait">
-            <div>
-                <div class="comment_user">Dun</div>
-                <div class="time">5分钟前</div>
-                <div class="default">赞同赞同！</div>
-            </div>
-        </div>
-        <div class="comment_content">
-            <img src="" alt="" class="portrait">
-            <div>
-                <div class="comment_user">David</div>
-                <div class="time">1小时前</div>
-                <div class="default">I don't agree with the above statement.</div>
-            </div>
-        </div>
-        <div class="comment_content">
-            <img src="" alt="" class="portrait">
-            <div>
-                <div class="comment_user">花轮同学</div>
-                <div class="time">2小时前</div>
-                <div class="default">I don't agree with the above statement.</div>
-            </div>
-        </div>
+        <div class="zan"><span id="commentCount"></span>条评论</div>
+        <div id="comments"></div>
     </div>
-
-    <a href="./trainer.html" style="text-align:center;font-size:0.6rem;">移步至私教详情页面</a>
-
 
     <script src="./assets/jquery-2.1.1.min.js"></script>
     <script src="./assets/swipeslider.js"></script>
-    <script src="./js/dynamic.js"></script>
+    <script src="./js/information.js"></script>
 </body>
 
 </html>

@@ -76,7 +76,7 @@ ul li {
     background-color: red;
 }
 
-.attention {
+/* .attention {
     width: 1.5733rem;
     height: 0.7067rem;
     background-color: #ff7c00;
@@ -85,12 +85,11 @@ ul li {
     color: white;
     text-align: center;
     font-size: 0.3467rem;
-}
+} */
 
 .square {
     display: block;
     width: 10rem;
-    height: 8.3733rem;
     background-color: antiquewhite;
 }
 
@@ -120,6 +119,7 @@ ul li {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 0px;
 }
 
 .user {
@@ -252,6 +252,14 @@ ul li {
     color: #999999;
 }
 
+.comment_default {
+    height: 2.6667rem;
+    line-height: 2.6667rem;
+    text-align: center;
+    font-size: 0.4rem;
+    color: #999999;
+  }
+
 
 /* ============================== demonstration.css ================================ */
 
@@ -267,7 +275,7 @@ ul li {
 }
 
 .coach {
-    width: 2.6rem;
+    padding: 0 0.2rem;
     height: 2.6rem;
     background-color: #f3f5f7;
     border-radius: 0.08rem;
@@ -283,4 +291,12 @@ ul li {
     line-height: 1.32rem;
     font-size: 0.4rem;
     color: #ffffff;
+}
+
+#brief{
+    line-height:0.6rem;
+}
+
+#gym{
+    margin-bottom: 0.4rem;
 }

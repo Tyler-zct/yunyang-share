@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <!-- 云扬下载 -->
     <div class="container" style="padding:0 0.4rem;">
         <div class="between">
             <div class="display">
@@ -27,47 +28,32 @@
 
     <div class="interspace"></div>
 
+    <!-- 公开课图片 -->
     <figure id="full_feature" class="swipslider">
         <ul class="sw-slides">
             <li class="sw-slide">
                 <img src="" alt="" class="square">
             </li>
-            <li class="sw-slide">
-                <img src="" alt="" class="square" style="background-color: bisque;">
-            </li>
-            <li class="sw-slide">
-                <img src="" alt="" class="square" style="background-color: cyan;">
-            </li>
-            <li class="sw-slide">
-                <img src="" alt="" class="square">
-            </li>
-            <li class="sw-slide">
-                <img src="" alt="" class="square" style="background-color: bisque;">
-            </li>
-            <li class="sw-slide">
-                <img src="" alt="" class="square" style="background-color: cyan;">
-            </li>
         </ul>
     </figure>
-
+<!-- 公开课详情 -->
     <div class="container" style="padding:0.1333rem 0.4rem;">
         <div class="flex">
             <div>
-                <span class="user">理疗瑜伽</span>
-                <div class="label" style="margin-top:0.2rem;"><span>#拉伸</span><span>#新陈代谢</span><span>#排毒</span>
-                </div>
+                <span class="user" id="title"></span>
+                <div class="label" style="margin-top:0.2rem;"></div>
             </div>
-            <div class="money">¥100</div>
+            <div class="money">¥<span id="price"></span></div>
         </div>
         <div class="title" style="margin:0.4rem 0;">
             <img src="./img/course_time.svg" alt="" class="course">
-            <span>2017-09-25(周一)    10:30 - 11:30 </span>
+            <span id="describe"></span>
         </div>
         <div class="flex">
-            <div class="small">已报名：27人</div>
-            <div class="small">截止报名：2017-09-25 10:35</div>
+            <div class="small">已报名：<span id="enrolls"></span>人</div>
+            <div class="small">截止报名：<span id="deadline"></span></div>
         </div>
-        <div class="zan" style="margin-top:0.5333rem;">报名须知：截止报名时人数若不满 3 人，课程将自动取消</div>
+        <div class="zan" style="margin-top:0.5333rem;">报名须知：截止报名时人数若不满 <span id="traineeMinnum"></span> 人，课程将自动取消</div>
     </div>
 
     <div class="sold">已下架</div>
@@ -76,11 +62,7 @@
     <script src="./assets/jquery-2.1.1.min.js"></script>
     <script src="./assets/swipeslider.js"></script>
     <script src="./assets/jquery.raty.min.js"></script>
-    <script>
-        $(function () {
-            $('#full_feature').swipeslider();
-        });
-    </script>
+    <script src="./js/demonstration.js"></script>
 </body>
 
 </html>
