@@ -62,7 +62,9 @@
             <span>所在门店</span>
         </div>
         <div class="text" id="gym"></div>
-        <div class="zan">详细地址：<span id="address"></span></div>
+        <div class="zan">详细地址：
+            <span id="address"></span>
+        </div>
         <div class="look">
             <span class="borders">查看门店</span>
             <span class="borders">全部课程</span>
@@ -85,7 +87,8 @@
     <div class="container" style="padding-bottom:0.2667rem;">
         <div class="title">
             <img src="./img/course_title.png" alt="" class="course">
-            <span>点评(<span id="comment_num"></span>)</span>
+            <span>点评(
+                <span id="comment_num"></span>)</span>
             <img src="./img/me_to_homepage.svg" alt="" class="more">
         </div>
         <div id="comments"></div>
@@ -93,12 +96,13 @@
 
     <div class="foot">立即预约</div>
 
-    <script src="./assets/jquery-2.1.1.min.js"></script>
-    <script src="./assets/swipeslider.js"></script>
-    <script src="./assets/jquery.raty.min.js"></script>
-    <script src="./js/trainer.js"></script>
-    <script>
-        $(function() {
+    <script type="text/javascript" src="./assets/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="./assets/swipeslider.js"></script>
+    <script type="text/javascript" src="./assets/jquery.raty.min.js"></script>
+    <script type="text/javascript" src="./assets/jweixin-1.2.0.js"></script>
+    <script type="text/javascript" src="./js/trainer.js"></script>
+    <script type="text/javascript">
+        $(function () {
             //  获取key
             function GetQueryString(name) {
                 var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
@@ -113,11 +117,11 @@
             }
 
             $.ajax({
-                url: `https://sharegyms.cn/kong-appint/social/sharing/${key}`,
+                url: `/kong-appint/social/sharing/${key}`,
                 // url: `https://tst.ipukr.cn/kong-appint/social/sharing/346de274-ec9d-4646-bb94-55abffc99da6`,
                 type: 'get',
                 dataType: 'json',
-                success: function(res) {
+                success: function (res) {
                     let date = res.data;
                     console.log(date)
                     let insScore = date.score;
@@ -183,7 +187,7 @@
                         readOnly: true,
                     });
                 },
-                error: function(err) {
+                error: function (err) {
                     console.log(err);
                 }
             })

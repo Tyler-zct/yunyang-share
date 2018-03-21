@@ -3,14 +3,10 @@ $(function() {
   function GetQueryString(name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
     var r = window.location.search.substr(1).match(reg);
-    console.log(window.location);
     if (r != null) return unescape(r[2]);
     return null;
   }
   const key = GetQueryString("key");
-  if (key != null && key.toString().length > 1) {
-    console.log(GetQueryString("key"));
-  }
 
   $.ajax({
     url: `https://sharegyms.cn/kong-appint/social/sharing/${key}`,
@@ -82,6 +78,51 @@ $(function() {
           alert("请前往应用商店搜索云扬健身下载!");
         }
       });
+    },
+    error: function(err) {
+      console.log(err);
+    }
+  });
+
+  // 微信二次分享
+  let url = encodeURIComponent(window.location.href.split("#")[0]);
+
+  $.ajax({
+    url: `/kong-appint/third/wx/sharing?url=${url}`,
+    type: "get",
+    dataType: "json",
+    success: function(res) {
+      wx.config({
+        debug: false,
+        appId: res.data.appId,
+        timestamp: res.data.timestamp, //生成签名的时间戳
+        nonceStr: res.data.nonceStr, //生成签名的随机字符串
+        signature: res.data.signature, //签名
+        jsApiList: [
+          "onMenuShareTimeline",
+          "onMenuShareAppMessage",
+          "onMenuShareQQ"
+        ] //必填，需要使用的JS接口列表
+      });
+
+      wx.ready(function() {
+        let shareData = {
+          title: "健身公开课分享", // 分享后的标题
+          desc: "点击查看公开课详情", // 分享后的描述信息
+          link: `https://sharegyms.cn/kong-appint/sharing/demonstration.html?key=${key}`, // 点击分享后跳转的页面地址
+          imgUrl: encodeURI("https://sharegyms.cn/YY_512px.png") // 分享后展示的图片
+        };
+        // 分享给朋友
+        wx.onMenuShareAppMessage(shareData);
+        // 分享到朋友圈
+        wx.onMenuShareTimeline(shareData);
+        // 分享到QQ
+        wx.onMenuShareQQ(shareData);
+      });
+
+      // wx.error(function(res){
+      //     alert(res.errMsg)
+      // })
     },
     error: function(err) {
       console.log(err);

@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="./assets/swipeslider.css">
     <link rel="stylesheet" href="./css/trainer.css">
     <style>
-        #feature{
+        #feature {
             width: 10rem;
             max-height: 8.3733rem;
             overflow: hidden;
         }
-        .square{
+
+        .square {
             width: 100%;
             height: auto;
         }
@@ -47,7 +48,9 @@
             </li>
         </ul>
     </figure> -->
-    <div id="feature"><img class="square" alt=""></div>
+    <div id="feature">
+        <img class="square" alt="">
+    </div>
 
     <!-- 公开课详情 -->
     <div class="container" style="padding-top:0.25rem;">
@@ -56,18 +59,25 @@
                 <span class="user" id="title"></span>
                 <div class="label" style="margin-top:0.2rem;"></div>
             </div>
-            <div class="money">¥<span id="price"></span></div>
+            <div class="money">¥
+                <span id="price"></span>
+            </div>
         </div>
         <div class="title" style="margin:0.4rem 0;">
             <img src="./img/course_time.svg" alt="" class="course">
             <span id="describe"></span>
         </div>
         <div class="flex">
-            <div class="small">已报名：<span id="enrolls"></span>人</div>
-            <div class="small">截止报名：<span id="deadline"></span></div>
+            <div class="small">已报名：
+                <span id="enrolls"></span>人</div>
+            <div class="small">截止报名：
+                <span id="deadline"></span>
+            </div>
         </div>
-        <div class="zan" style="margin-top:0.5333rem;">报名须知：截止报名时人数若不满 <span id="traineeMinmum"></span> 人，课程将自动取消</div>
-        <div class="zan" style="margin-top:0.1rem;">限时取消：<span id="abolish"></span>前可免费取消</div>
+        <div class="zan" style="margin-top:0.5333rem;">报名须知：截止报名时人数若不满
+            <span id="traineeMinmum"></span> 人，课程将自动取消</div>
+        <div class="zan" style="margin-top:0.1rem;">限时取消：
+            <span id="abolish"></span>前可免费取消</div>
     </div>
 
     <div class="interspace"></div>
@@ -78,7 +88,9 @@
             <span>所在门店</span>
         </div>
         <div class="text" style="margin-bottom: 0.4rem;" id="gym_title"></div>
-        <div class="zan">详细地址：<span id="gym_address"></span></div>
+        <div class="zan">详细地址：
+            <span id="gym_address"></span>
+        </div>
         <div class="look">
             <span class="borders">查看门店</span>
             <span class="borders">全部课程</span>
@@ -102,19 +114,21 @@
     <div class="container" style="padding-bottom:0.2667rem;">
         <div class="title">
             <img src="./img/course_title.png" alt="" class="course">
-            <span>教练(<span id="ins_count"></span>)</span>
+            <span>教练(
+                <span id="ins_count"></span>)</span>
         </div>
         <div class="display" id="instructors"></div>
     </div>
 
     <div class="foot" style="margin-top:0.4rem;">立即报名</div>
 
-    <script src="./assets/jquery-2.1.1.min.js"></script>
-    <script src="./assets/swipeslider.js"></script>
-    <script src="./assets/jquery.raty.min.js"></script>
-    <script src="./js/demonstration.js"></script>
-    <script>
-        $(function() {
+    <script type="text/javascript" src="./assets/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="./assets/swipeslider.js"></script>
+    <script type="text/javascript" src="./assets/jquery.raty.min.js"></script>
+    <script type="text/javascript" src="./assets/jweixin-1.2.0.js"></script>
+    <script type="text/javascript" src="./js/demonstration.js"></script>
+    <script type="text/javascript">
+        $(function () {
             $('#full_feature').swipeslider({
                 sliderHeight: '80%'
             });

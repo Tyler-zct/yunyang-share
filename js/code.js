@@ -11,15 +11,18 @@ $(window).load(function() {
     if (key != null && key.toString().length > 1) {
       console.log(GetQueryString("key"));
     }
+    // $.getJSON('https://tst.ipukr.cn/letransi-appint/third/qr/358354086335877?width=500&height=500',function(res){
+    //   console.log(res);
+    // })
     $.ajax({
-      url: `https://sharegyms.cn/kong-appint/social/sharing/${key}`,
-      // url: `https://tst.ipukr.cn/kong-appint/social/sharing/b82941ab-768d-4b1e-a9ee-f702bf10a7c7`,
+      // url: `https://sharegyms.cn/kong-appint/social/sharing/${key}`,
+      url: `https://tst.ipukr.cn/letransi-appint/third/qr/358354086335877?width=500&height=500`,
       type: "get",
       dataType: "json",
       success: function(res) {
-        // console.log(res.data);
-        let date = res.data;
-        
+        console.log(res.responseText);
+        let date = res;
+        console.log(res);
   
         $(".download").click(function() {
           let u = navigator.userAgent;
@@ -39,6 +42,8 @@ $(window).load(function() {
       },
       error: function(err) {
         console.log(err);
+        console.log(err.responseText)
+        $('.code').qrcode(err.responseText)
       }
     });
   });

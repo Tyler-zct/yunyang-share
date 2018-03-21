@@ -3,14 +3,10 @@ $(window).load(function() {
   function GetQueryString(name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
     var r = window.location.search.substr(1).match(reg);
-    console.log(window.location);
     if (r != null) return unescape(r[2]);
     return null;
   }
   const key = GetQueryString("key");
-  if (key != null && key.toString().length > 1) {
-    console.log(GetQueryString("key"));
-  }
 
   $.ajax({
     url: `https://sharegyms.cn/kong-appint/social/sharing/${key}`,
@@ -18,7 +14,6 @@ $(window).load(function() {
     type: "get",
     dataType: "json",
     success: function(res) {
-      console.log(res.data);
       let date = res.data;
       //  评论数, 默认0
       $("#commentCount").html(date.commentCount);
@@ -51,7 +46,6 @@ $(window).load(function() {
       let like = date.likes;
       let like_list = "";
       for (let i = 0; i < like.length; i++) {
-        console.log(like[i].ownerPortrait);
         like_list += `<li>
                         <img src="${
                           like[i].ownerPortrait
@@ -82,6 +76,51 @@ $(window).load(function() {
           alert("请前往应用商店搜索云扬健身下载!");
         }
       });
+    },
+    error: function(err) {
+      console.log(err);
+    }
+  });
+
+  // 微信二次分享
+  let url = encodeURIComponent(window.location.href.split("#")[0]);
+
+  $.ajax({
+    url: `/kong-appint/third/wx/sharing?url=${url}`,
+    type: "get",
+    dataType: "json",
+    success: function(res) {
+      wx.config({
+        debug: false,
+        appId: res.data.appId,
+        timestamp: res.data.timestamp, //生成签名的时间戳
+        nonceStr: res.data.nonceStr, //生成签名的随机字符串
+        signature: res.data.signature, //签名
+        jsApiList: [
+          "onMenuShareTimeline",
+          "onMenuShareAppMessage",
+          "onMenuShareQQ"
+        ] //必填，需要使用的JS接口列表
+      });
+
+      wx.ready(function() {
+        let shareData = {
+          title: "健身资讯分享", // 分享后的标题
+          desc: "云扬共享大数据健身房,为您的健康保驾护航", // 分享后的描述信息
+          link: `https://sharegyms.cn/kong-appint/sharing/information.html?key=${key}`, // 点击分享后跳转的页面地址
+          imgUrl: encodeURI("https://sharegyms.cn/YY_512px.png") // 分享后展示的图片
+        };
+        // 分享给朋友
+        wx.onMenuShareAppMessage(shareData);
+        // 分享到朋友圈
+        wx.onMenuShareTimeline(shareData);
+        // 分享到QQ
+        wx.onMenuShareQQ(shareData);
+      });
+
+      // wx.error(function(res){
+      //     alert(res.errMsg)
+      // })
     },
     error: function(err) {
       console.log(err);

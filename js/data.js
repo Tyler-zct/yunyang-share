@@ -3,23 +3,18 @@ $(document).ready(function() {
   function GetQueryString(name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
     var r = window.location.search.substr(1).match(reg);
-    console.log(window.location);
     if (r != null) return unescape(r[2]);
     return null;
   }
   const key = GetQueryString("key");
-  if (key != null && key.toString().length > 1) {
-    console.log(GetQueryString("key"));
-  }
 
   $.ajax({
-     url: `https://sharegyms.cn/kong-appint/social/sharing/${key}`,
+    url: `/kong-appint/social/sharing/${key}`,
     // url: `https://tst.ipukr.cn/kong-appint/social/sharing/5e453e24-d6b2-4430-9261-449f61c444bd`,
     type: "get",
     dataType: "json",
     success: function(res) {
       let date = res.data;
-      console.log(date);
       let arr = [
         {
           value: date.fat
@@ -70,10 +65,9 @@ $(document).ready(function() {
       let value = percent * 9.2;
       value = value - 0.7867 / 2;
       value += "rem";
-      $(".value").css('left',value);
+      $(".value").css("left", value);
       percent = Number(percent * 100).toFixed(1);
       percent += "%";
-      console.log(percent);
       $(".prog").attr("x2", percent);
 
       /* 基本数据 */
@@ -191,7 +185,6 @@ $(document).ready(function() {
       /* 骨骼肌 */
       $("#smm").html(date.smm);
       $("#smmStatus").html(date.smmStatus);
-      console.log();
       date.smmTopLimit = date.smmTopLimit.toFixed(1);
       date.smmLowerLimit = date.smmLowerLimit.toFixed(1);
       $(".smmTopLimit").html(date.smmTopLimit);
@@ -286,6 +279,51 @@ $(document).ready(function() {
             "https://itunes.apple.com/cn/app/id1340846876?mt=8";
         } else {
           alert("请前往应用商店搜索云扬健身下载!");
+        }
+      });
+
+      // 微信二次分享
+      let url = encodeURIComponent(window.location.href.split("#")[0]);
+
+      $.ajax({
+        url: `/kong-appint/third/wx/sharing?url=${url}`,
+        type: "get",
+        dataType: "json",
+        success: function(res) {
+          wx.config({
+            debug: false,
+            appId: res.data.appId,
+            timestamp: res.data.timestamp, //生成签名的时间戳
+            nonceStr: res.data.nonceStr, //生成签名的随机字符串
+            signature: res.data.signature, //签名
+            jsApiList: [
+              "onMenuShareTimeline",
+              "onMenuShareAppMessage",
+              "onMenuShareQQ"
+            ] //必填，需要使用的JS接口列表
+          });
+
+          wx.ready(function() {
+            let shareData = {
+              title: "体侧结果分享", // 分享后的标题
+              desc: "体测报告", // 分享后的描述信息
+              link: `https://sharegyms.cn/kong-appint/sharing/data.html?key=${key}`, // 点击分享后跳转的页面地址
+              imgUrl: encodeURI("https://sharegyms.cn/YY_512px.png") // 分享后展示的图片
+            };
+            // 分享给朋友
+            wx.onMenuShareAppMessage(shareData);
+            // 分享到朋友圈
+            wx.onMenuShareTimeline(shareData);
+            // 分享到QQ
+            wx.onMenuShareQQ(shareData);
+          });
+
+          // wx.error(function(res){
+          //     alert(res.errMsg)
+          // })
+        },
+        error: function(err) {
+          console.log(err);
         }
       });
     },
