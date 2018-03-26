@@ -267,6 +267,7 @@ ul li {
     font-size: 0.6933rem;
     color: #ff7c00;
     font-weight: 600;
+    margin: 0.1rem 0;
 }
 
 .small {
@@ -299,4 +300,44 @@ ul li {
 
 #gym{
     margin-bottom: 0.4rem;
+}
+.class_type{
+    display: inline-block;
+    width: 1.5733rem;
+	height: 0.4533rem;
+    text-align: center;
+    line-height: 0.4533rem;
+	background-color: #f46036;
+    border-radius: 0.08rem;
+    font-size: 0.2667rem;
+    color: #ffffff;
+    margin-right: 0.2rem;
+}
+.experience{
+    width: 1.32rem;
+	height: 0.3467rem;
+	background-color: #ffffff;
+	border-radius: 0.08rem;
+    border: solid 0.0133rem #ff7c00;
+    font-size: 0.2667rem;
+	color: #ff7c00;
+}
+.gray{
+    font-size: 0.2933rem;
+	color: #999999;
+}
+.circle{
+    width: 0.48rem;
+    height: 0.48rem;
+    border-radius: 50%;
+    border: 0.0133rem solid #999;
+    margin-right: 0.4rem;
+}
+.uhead{
+    display: block;
+    width: 0.9333rem;
+    height: 0.9333rem;
+    border-radius: 50%;
+    background-color: red;
+    margin-right: 0.2rem;
 }

@@ -9,8 +9,8 @@ $(function() {
   const key = GetQueryString("key");
 
   $.ajax({
-    url: `https://sharegyms.cn/kong-appint/social/sharing/${key}`,
-    // url: `https://tst.ipukr.cn/kong-appint/social/sharing/6196726a-d35b-4e2f-b998-ea06df0d50e6`,
+    // url: `https://sharegyms.cn/kong-appint/social/sharing/${key}`,
+    url: `https://tst.ipukr.cn/kong-appint/social/sharing/6196726a-d35b-4e2f-b998-ea06df0d50e6`,
     type: "get",
     dataType: "json",
     success: function(res) {
