@@ -10,7 +10,7 @@ $(document).ready(function() {
 
   $.ajax({
     url: `/kong-appint/social/sharing/${key}`,
-    // url: `https://tst.ipukr.cn/kong-appint/social/sharing/5e453e24-d6b2-4430-9261-449f61c444bd`,
+    // url: `https://sharegyms.cn/kong-appint/social/sharing/5e453e24-d6b2-4430-9261-449f61c444bd`,
     type: "get",
     dataType: "json",
     success: function(res) {
@@ -77,7 +77,13 @@ $(document).ready(function() {
       if (date.sex == 0) {
         date.sex = "女";
       }
-      $("#sex").html(date.sex);
+      if (date.sex == 2) {
+        $("#sex").html("女");
+      } else if (date.sex == 1) {
+        $("#sex").html("男");
+      } else {
+        alert("请确认是否填写性别");
+      }
       $("#height").html(date.height);
       $(".weight").html(date.weight);
       $("#age").html(date.age);
