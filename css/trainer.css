@@ -270,6 +270,17 @@ ul li {
     margin: 0.1rem 0;
 }
 
+.bottle{
+    font-size: 0.5rem;
+}
+.bottle_img{
+    height: 0.8rem;
+}
+
+.bottle_num{
+    font-size: 0.65rem;
+    margin-right: 0.2rem;
+}
 .small {
     font-size: 0.2933rem;
     color: #666666;

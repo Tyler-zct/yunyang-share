@@ -71,18 +71,10 @@ $(document).ready(function() {
       $(".prog").attr("x2", percent);
 
       /* 基本数据 */
-      if (date.sex == 1) {
-        date.sex = "男";
-      }
-      if (date.sex == 0) {
-        date.sex = "女";
-      }
       if (date.sex == 2) {
         $("#sex").html("女");
-      } else if (date.sex == 1) {
-        $("#sex").html("男");
       } else {
-        alert("请确认是否填写性别");
+        $("#sex").html("男");
       }
       $("#height").html(date.height);
       $(".weight").html(date.weight);

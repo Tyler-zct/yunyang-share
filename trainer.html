@@ -8,7 +8,7 @@
     <script src="./assets/flexible.min.js"></script>
     <link rel="stylesheet" href="./assets/swipeslider.css">
     <link rel="stylesheet" href="./css/trainer.css">
-    <title>私教详情</title>
+    <title>私教课详情</title>
 </head>
 
 <body>
@@ -114,7 +114,6 @@
             if (key != null && key.toString().length > 1) {
                 console.log(GetQueryString("key"));
             }
-
             $.ajax({
                 url: `/kong-appint/social/sharing/${key}`,
                 // url: `https://tst.ipukr.cn/kong-appint/social/sharing/346de274-ec9d-4646-bb94-55abffc99da6`,
@@ -190,7 +189,6 @@
                     console.log(err);
                 }
             })
-
         });
     </script>
 </body>
