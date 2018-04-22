@@ -7,67 +7,37 @@ $(function() {
     return null;
   }
   const key = GetQueryString("key");
-  
+
   $.ajax({
     url: `/kong-appint/social/sharing/${key}`,
-    // url: `https://sharegyms.cn/kong-appint/social/sharing/346de274-ec9d-4646-bb94-55abffc99da6`,
+    // url: `https://tst.ipukr.cn/kong-appint/social/sharing/2c58c374-10a0-4b31-88de-40e61d9fdc39`,
     type: "get",
     dataType: "json",
     success: function(res) {
       let date = res.data;
-
-      $("#name").html(date.name);
-      $(".gender").html(date.gender);
-      $("#stature").html(date.stature);
-      $("#weight").html(date.weight);
-      $("#gym").html(date.title);
-      $("#address").html(date.address);
+      $("#gym_title").html(date.gym.title);
+      $("#gym_address").html(date.gym.address);
       $("#brief").html(date.brief);
+      $(".user").html(date.title);
       //  运动标签
-      let lab = date.major,
+      let lab = date.labels,
         label = "";
       for (let i = 0; i < lab.length; i++) {
         label += `<span>#${lab[i]}</span>`;
       }
       $(".label").append(label);
-      //  私教图片
+      //  私教课图片
       let picture = date.pictures,
         pictures_list;
       for (let i = 0; i < picture.length; i++) {
-        pictures_list += `<li class="sw-slide">
-                        <img src=${picture[i]} alt="" class="square">
-                     </li>`;
+        pictures_list += `
+        <li class="sw-slide">
+          <img src=${picture[i]} alt="" class="square">
+        </li>`;
       }
       $("#pictures").html(pictures_list);
       //  轮播图
       $("#full_feature").swipeslider();
-      // 评论情况
-      let comments = date.comments;
-      $("#comment_num").html(comments.length);
-      if (comments.length == 0) {
-        $("#comments").html(`还没有人评论过`);
-        $("#comments").addClass("comment_default");
-      } else {
-        $.each(comments, (i, ele) => {
-          let str = `<div class="comment_content">
-                       <div>
-                           <img src="${
-                             ele.ownerPortrait
-                           }" alt="" class="remark_portrait">
-                       </div>
-                       <div style="width:90%;">
-                           <div class="comment_user">${ele.ownerNickname}</div>
-                           <div class="time">${ele.crtTime}</div>
-                           <div class="">
-                               <span id="user${i +
-                                 1}" class="target-star"></span>
-                           </div>
-                           <div class="default">${ele.content}</div>
-                       </div>
-                   </div>`;
-          $("#comments").append(str);
-        });
-      }
 
       $(".download").click(function() {
         let u = navigator.userAgent;
@@ -129,7 +99,7 @@ $(function() {
 
       wx.ready(function() {
         let shareData = {
-          title: "健身私教分享", // 分享后的标题
+          title: "健身私教课分享", // 分享后的标题
           desc: "私人教练", // 分享后的描述信息
           link: `https://sharegyms.cn/kong-appint/sharing/trainer.html?key=${key}`, // 点击分享后跳转的页面地址
           imgUrl: encodeURI("https://sharegyms.cn/YY_512px.png") // 分享后展示的图片

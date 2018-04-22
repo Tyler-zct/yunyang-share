@@ -10,7 +10,7 @@ $(function() {
 
   $.ajax({
     url: `/kong-appint/social/sharing/${key}`,
-    // url: `https://sharegyms.cn/kong-appint/social/sharing/6196726a-d35b-4e2f-b998-ea06df0d50e6`,
+    // url: `https://tst.ipukr.cn/kong-appint/social/sharing/2c58c374-10a0-4b31-88de-40e61d9fdc39`,
     type: "get",
     dataType: "json",
     success: function(res) {
@@ -18,9 +18,21 @@ $(function() {
       /* 课程信息 */
       $("#title").html(date.title);
       $("#describe").html(date.describe);
-      $(".square").attr("src", date.cover);
+      // 公开课图片
+      let picture = date.pictures,
+        pictures_list;
+      for (let i = 0; i < picture.length; i++) {
+        pictures_list += `
+          <li class="sw-slide">
+            <img src=${picture[i]} alt="" class="square">
+          </li>`;
+      }
+      $("#pictures").html(pictures_list);
+      //  轮播图
+      $("#full_feature").swipeslider();
+      $(".class_type").html(date.specification);
       // 健身标签
-      let lab = date.label,
+      let lab = date.labels,
         label = "";
       for (let i = 0; i < lab.length; i++) {
         label += `<span>#${lab[i]}</span>`;
@@ -42,24 +54,28 @@ $(function() {
       //  教练名单
       let instructors = date.instructors;
       $.each(instructors, (i, ele) => {
-        let str = `<div class="coach">
-                    <img src="${
-                      ele.cover
-                    }" alt="" class="remark_portrait" style="margin-top:0.25rem;"> 
-                    <div class="default">
-                        <span>${ele.name}</span><span class="gary">(${
-          ele.title
-        })</span>
-                    </div>
-                    <div class="gary">评分${ele.score}</div>
-                </div>`;
+        let str = `
+          <div class="coach">
+            <img src="${ele.cover}" alt="" class="remark_portrait" style="margin-top:0.25rem;"> 
+            <div class="default">
+              <span>${ele.name}</span><span class="gary">(${ele.title})</span>
+            </div>
+            <div class="gary">评分5.0</div>
+          </div>`;
         $("#instructors").append(str);
       });
 
       $("#ins_count").html(date.instructors.length);
 
       //  课程价格
-      $("#price").html(date.price);
+      if (date.currencyType == "人民币") {
+        $("#price").html(date.price);
+        $(".bottle").css("display", "none");
+      } else if (date.currencyType == "能量瓶") {
+        $(".bottle_num").html(date.voucher);
+        $(".money").css("display", "none");
+      }
+
       //  课程人数, 最小限制
       $("#traineeMinmum").html(date.traineeMinmum);
 

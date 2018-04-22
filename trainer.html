@@ -33,7 +33,7 @@
         <ul class="sw-slides" id="pictures"></ul>
     </figure>
 
-    <!-- 私教信息 -->
+    <!-- 私教课信息 -->
     <div class="container" style="padding-top:0.1333rem;">
         <div class="flex">
             <div>
@@ -72,12 +72,13 @@
 
     <div class="interspace"></div>
 
-    <div class="container" style="padding-right: 0;">
+    <!-- <div class="container" style="padding-right: 0;">
         <div class="title" style="margin-bottom: 0;">
             <img src="./img/course_title.png" alt="" class="course">
             <span>选取私教</span>
             <span style="color:#999;">(不支持多选)</span>
         </div>
+        <div id="select"></div>
         <div class="display">
             <div class="circle"></div>
             <div class="between" style="width: 100%;border-bottom: 0.0133rem solid #999;padding: 0.4rem 0.4rem 0.4rem 0">
@@ -91,7 +92,7 @@
                 <img src="./img/discover_more_1.svg" alt="" class="more">
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="foot">立即预约</div>
 
@@ -100,97 +101,6 @@
     <script type="text/javascript" src="./assets/jquery.raty.min.js"></script>
     <script type="text/javascript" src="./assets/jweixin-1.2.0.js"></script>
     <script type="text/javascript" src="./js/trainer.js"></script>
-    <script type="text/javascript">
-        $(function () {
-            //  获取key
-            function GetQueryString(name) {
-                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-                var r = window.location.search.substr(1).match(reg);
-                // console.log(window.location)
-                if (r != null) return unescape(r[2]);
-                return null;
-            }
-            const key = GetQueryString("key");
-            if (key != null && key.toString().length > 1) {
-                console.log(GetQueryString("key"));
-            }
-            $.ajax({
-                url: `/kong-appint/social/sharing/${key}`,
-                // url: `https://tst.ipukr.cn/kong-appint/social/sharing/346de274-ec9d-4646-bb94-55abffc99da6`,
-                type: 'get',
-                dataType: 'json',
-                success: function (res) {
-                    let date = res.data;
-                    console.log(date)
-                    let insScore = date.score;
-                    $('#function-star').raty({
-                        path: 'img',
-                        starHalf: 'course_score03_m.png',
-                        starOff: 'course_score02_m.png',
-                        starOn: 'course_score01_m.png',
-                        target: '#function-hint',
-                        targetKeep: true,
-                        precision: true,
-                        score: insScore,
-                        readOnly: true,
-                    });
-                    $('#user1').raty({
-                        path: 'img',
-                        starHalf: 'course_score03_m.png',
-                        starOff: 'course_score02_m.png',
-                        starOn: 'course_score01_m.png',
-                        targetKeep: true,
-                        precision: true,
-                        score: 4,
-                        readOnly: true,
-                    });
-                    $('#user2').raty({
-                        path: 'img',
-                        starHalf: 'course_score03_m.png',
-                        starOff: 'course_score02_m.png',
-                        starOn: 'course_score01_m.png',
-                        targetKeep: true,
-                        precision: true,
-                        score: 4,
-                        readOnly: true,
-                    });
-                    $('#user3').raty({
-                        path: 'img',
-                        starHalf: 'course_score03_m.png',
-                        starOff: 'course_score02_m.png',
-                        starOn: 'course_score01_m.png',
-                        targetKeep: true,
-                        precision: true,
-                        score: 3,
-                        readOnly: true,
-                    });
-                    $('#user4').raty({
-                        path: 'img',
-                        starHalf: 'course_score03_m.png',
-                        starOff: 'course_score02_m.png',
-                        starOn: 'course_score01_m.png',
-                        targetKeep: true,
-                        precision: true,
-                        score: 4,
-                        readOnly: true,
-                    });
-                    $('#user5').raty({
-                        path: 'img',
-                        starHalf: 'course_score03_m.png',
-                        starOff: 'course_score02_m.png',
-                        starOn: 'course_score01_m.png',
-                        targetKeep: true,
-                        precision: true,
-                        score: 3,
-                        readOnly: true,
-                    });
-                },
-                error: function (err) {
-                    console.log(err);
-                }
-            })
-        });
-    </script>
 </body>
 
 </html>

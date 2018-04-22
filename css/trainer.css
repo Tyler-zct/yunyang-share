@@ -272,6 +272,8 @@ ul li {
 
 .bottle{
     font-size: 0.5rem;
+    color: #ff7c00;
+    margin: 0.1rem 0;
 }
 .bottle_img{
     height: 0.8rem;
